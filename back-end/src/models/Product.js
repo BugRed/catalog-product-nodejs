@@ -17,6 +17,10 @@ const productSchema = new mongoose.Schema({
   },
   description: {type: String},
   imgUrl: {type: String},
+  categories:  [{ 
+    type: mongoose.Types.ObjectId,
+    ref: "category",
+    required: [true, "The product must have at least one category"]}]
 }, {});
 
 productSchema.plugin(autopopulate);

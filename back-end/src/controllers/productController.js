@@ -18,7 +18,7 @@ class ProductController {
       if (findProduct !== null) {
         res.status(200).json(findProduct);
       } else {
-        next(new NotFound("Book id not found."));
+        next(new NotFound("product id not found."));
       }
 
     } catch (erro) {
@@ -42,7 +42,7 @@ class ProductController {
       if (findBook !== null) {
         res.status(200).json({ message: "Update product" });
       } else {
-        next(new NotFound("Book id not found."));
+        next(new NotFound("Product id not found."));
       }
 
     } catch (erro) {
@@ -57,7 +57,7 @@ class ProductController {
       if (findBook !== null) {
         res.status(200).json({ message: "Delete product" });
       } else {
-        next(new NotFound("Book id not found."));
+        next(new NotFound("Product id not found."));
       }
     } catch (erro) {
       next(erro);

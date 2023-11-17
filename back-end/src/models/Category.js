@@ -8,14 +8,7 @@ const categorySchema = new mongoose.Schema({
     type: String,
     required: [true, "Category name is mandatory"]
   },
-  products: {
-    [{
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'product',
-      autopopulate: { select: "name" }
-    }]
-    
-  }
+  products:  [{ type: mongoose.Types.ObjectId, ref: "product" }]
 
 }, {});
 
